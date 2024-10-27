@@ -28,12 +28,12 @@ class BMRSClient:
         # Transform JSON data to a pandas dataframe
         records = [
             {
-                "timestamp": datetime.strptime(record['startTime'], "%Y-%m-%dT%J:%M:%SZ"),
+                "timestamp": datetime.strptime(record['startTime'], "%Y-%m-%dT%H:%M:%SZ"),
                 "systemSellPrice": float(record['systemSellPrice']),
                 "systemBuyPrice": float(record['systemBuyPrice']),
                 "netImbalanceVolume": float(record['netImbalanceVolume'])
             }
-            for record in data['date']
+            for record in data['data']
         ]
 
         df = pd.DataFrame(records)
