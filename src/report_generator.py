@@ -57,6 +57,19 @@ class ReportGenerator:
         peak_hour = hourly_imbalance.idxmax()
         return peak_hour
     
+    def calculate_daily_average_imbalance(self) -> float:
+        """
+        Calculate the daily average net imbalance volume.
+
+        Args:
+            data (pd.DataFrame): DataFrame containing imbalance data with a 'netImbalanceVolume' column.
+
+        Returns:
+            float: The daily average net imbalance volume.
+        """
+        daily_average = self.data['netImbalanceVolume'].mean()
+        return round(daily_average, 2)
+
     def generate_report_message(self) -> str:
         """
         Generate a summary message with the imbalance cost, unit rate, and peak imbalance hour.
@@ -67,10 +80,13 @@ class ReportGenerator:
         total_cost = self.calculate_daily_imbalance_cost()
         unit_rate = self.calculate_unit_rate()
         peak_hour = self.hour_with_highest_imbalance()
+        daily_average = self.calculate_daily_average_imbalance()
         
         return (f"Total Daily Imbalance Cost: £{total_cost:.2f}\n"
                 f"Daily Imbalance Unit Rate: £{unit_rate:.2f}/MWh\n"
-                f"Hour with Highest Imbalance Volume: {peak_hour}:00")
+                f"Hour with Highest Imbalance Volume: {peak_hour}:00\n\n\n"
+                f"Extra analysis:\n"
+                f"Daily Average Net Imbalance Volume: {daily_average} MWh")
     
     def save_report(self, output_path: str) -> None:
         """
