@@ -1,0 +1,7 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+myenv/
+*.log
+.pytest_cache/
+.coverage
