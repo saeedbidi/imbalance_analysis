@@ -5,3 +5,4 @@ myenv/
 *.log
 .pytest_cache/
 .coverage
+.DS_Store
