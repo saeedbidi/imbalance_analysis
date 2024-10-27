@@ -55,3 +55,18 @@ class ReportGenerator:
         hourly_imbalance = self.data.groupby('hour')['netImbalanceVolume'].sum().abs()
         peak_hour = hourly_imbalance.idxmax()
         return peak_hour
+    
+    def generate_report_message(self) -> str:
+        """
+        Generate a summary message with the imbalance cost, unit rate, and peak imbalance hour.
+
+        Returns:
+            str: Formatted report message.
+        """
+        total_cost = self.calculate_daily_imbalance_cost()
+        unit_rate = self.calculate_unit_rate()
+        peak_hour = self.hour_with_highest_imbalance()
+        
+        return (f"Total Daily Imbalance Cost: £{total_cost:.2f}\n"
+                f"Daily Imbalance Unit Rate: £{unit_rate:.2f}/MWh\n"
+                f"Hour with Highest Imbalance Volume: {peak_hour}:00")
