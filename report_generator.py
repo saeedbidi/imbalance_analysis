@@ -29,7 +29,7 @@ class ReportGenerator:
             abs(self.data['netImbalanceVolume']) * self.data['systemBuyPrice']
         )
         self.data['imbalanceCost'] = imbalance_costs
-        total_cost = imbalance_costs.sum()
+        total_cost = self.data['imbalanceCost'].sum()
         return total_cost
 
     def calculate_unit_rate(self) -> float:
