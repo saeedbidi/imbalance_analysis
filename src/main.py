@@ -1,7 +1,7 @@
 import os
 from bmrs_client import BMRSClient
 from report_generator import ReportGenerator
-from plotter import plot_imbalance
+from plotter import plot_imbalance, plot_hourly_imbalance
 
 def main():
     # Set the output path
@@ -16,12 +16,13 @@ def main():
     # Generate report
     report = ReportGenerator(data)
     
-    # Output
-    print(report.generate_report_message())
+    # Output and save report with weekly trend included
+    print(report.generate_report_message(include_weekly_trend=True))
+    report.save_report(output_path, include_weekly_trend=True)
 
-    # Save report and plot to the output directory
-    report.save_report(output_path)
+    # Plot and save visuals to the output directory
     plot_imbalance(data, output_path)
+    plot_hourly_imbalance(data, output_path)
 
 if __name__ == "__main__":
     main()

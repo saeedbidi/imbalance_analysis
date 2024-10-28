@@ -1,3 +1,13 @@
 Total Daily Imbalance Cost: £1811320.29
 Daily Imbalance Unit Rate: £152.43/MWh
 Hour with Highest Imbalance Volume: 7:00
+
+
+Extra analysis:
+Daily Average Net Imbalance Volume: 228.84 MWh
+Peak Hourly Imbalance Cost: £222963.69 at hour 7
+
+Weekly Imbalance Cost Trend:
+date
+2023-10-29    1.811320e+06
+Freq: W-SUN
