@@ -24,7 +24,7 @@ class ReportGenerator:
             self.data['netImbalanceVolume'] < 0,
             abs(self.data['netImbalanceVolume']) * self.data['systemSellPrice'],
             abs(self.data['netImbalanceVolume']) * self.data['systemBuyPrice']
-        )
+        ).astype(float)  # Cast to float to ensure consistent dtype
         self.data['imbalanceCost'] = imbalance_costs
         total_cost = self.data['imbalanceCost'].sum()
         return total_cost
@@ -100,6 +100,11 @@ class ReportGenerator:
         Returns:
             pd.Series: Weekly imbalance cost trend, indexed by week.
         """
+        # Ensure imbalance cost has been calculated
+        if 'imbalanceCost' not in self.data.columns:
+            self.calculate_daily_imbalance_cost()
+
+        # Calculate the weekly trend
         self.data['date'] = pd.to_datetime(self.data.index.date)
         daily_cost = self.data.groupby('date')['imbalanceCost'].sum()
         daily_cost.index = pd.to_datetime(daily_cost.index)
