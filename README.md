@@ -62,12 +62,43 @@ The analysis can help identify patterns in electricity system imbalances, such a
    ```
 
 3. **Output Summary:**
-   - **Report**: Provides key metrics such as total daily imbalance cost, unit rate, peak imbalance hour, and daily averages.
-   - **Plots**:
-     - `hourly_imbalance_volume.png`: Shows the hourly breakdown of imbalance volume.
-     - `imbalance_plot_with_moving_average.png`: A line plot of imbalance volume over time, with a smoothed moving average.
-     - `peak_off_peak_plot.png`: Highlights peak and off-peak usage periods.
-     - `clustered_usage_plot.png`: Groups imbalance volumes by clusters to visualise usage levels (e.g., low, medium, high).
+
+   ## Output Summary
+
+   ### Report
+   The report provides key metrics such as total daily imbalance cost, unit rate, peak imbalance hour, and daily averages. You can view the generated report file here:
+
+   - [Daily Imbalance Report](output/daily_imbalance_report.txt)
+
+   ```bash
+   Total Daily Imbalance Cost: £1811320.29
+   Daily Imbalance Unit Rate: £152.43/MWh
+   Hour with Highest Imbalance Volume: 7:00
+
+
+   Extra analysis:
+   Daily Average Net Imbalance Volume: 228.84 MWh
+   Peak Hourly Imbalance Cost: £222963.69 at hour 7
+
+   Weekly Imbalance Cost Trend:
+   date
+   2023-10-29    1.811320e+06
+   Freq: W-SUN
+
+   ```
+
+   ### Plots
+
+   Below are the generated plots for daily imbalance analysis:
+
+   | ![Hourly Imbalance Volume](output/hourly_imbalance_volume.png) | ![Imbalance Plot with Moving Average](output/imbalance_plot_with_moving_average.png) |
+   | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
+   | **Hourly Imbalance Volume**: Shows the hourly breakdown of imbalance volume. | **Imbalance Plot with Moving Average**: A line plot of imbalance volume over time, with a smoothed moving average. |
+
+   | ![Peak and Off-Peak Plot](output/peak_off_peak_plot.png)       | ![Clustered Usage Plot](output/clustered_usage_plot.png)       |
+   | :------------------------------------------------------------: | :-------------------------------------------------------------: |
+   | **Peak and Off-Peak Plot**: Highlights peak and off-peak usage periods. | **Clustered Usage Plot**: Groups imbalance volumes by clusters to visualise usage levels (e.g., low, medium, high). |
+  
 
 ## Project Structure
 
