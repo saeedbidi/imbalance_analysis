@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from src.report_generator import ReportGenerator
 
+
 class TestReportGenerator:
     """
     Unit tests for the ReportGenerator class, ensuring accurate calculations for 

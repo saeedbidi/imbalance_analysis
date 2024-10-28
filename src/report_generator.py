@@ -2,12 +2,14 @@ import os
 import pandas as pd
 import numpy as np
 
+
 class ReportGenerator:
     """Processes system prices and volume data to generate detailed daily imbalance reports."""
 
     def __init__(self, data: pd.DataFrame):
         """Initialise the report generator with imbalance data, ready for processing."""
         self.data = data
+    """Processes system prices and volume data to generate detailed daily imbalance reports."""
 
     def calculate_daily_imbalance_cost(self) -> float:
         """

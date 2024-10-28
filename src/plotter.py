@@ -1,8 +1,8 @@
 import os
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
+
 
 def plot_imbalance(data: pd.DataFrame, output_path: str, window: int = 3, annotate_peaks: bool = True):
     """
@@ -46,6 +46,7 @@ def plot_imbalance(data: pd.DataFrame, output_path: str, window: int = 3, annota
     plt.close()
     print(f"Imbalance plot with moving average and annotations saved to {plot_file_path}")
 
+
 def plot_hourly_imbalance(data: pd.DataFrame, output_path: str):
     """
     Generate a bar chart of hourly net imbalance volumes.
@@ -75,6 +76,7 @@ def plot_hourly_imbalance(data: pd.DataFrame, output_path: str):
     plt.savefig(plot_path, bbox_inches='tight', dpi=300)
     plt.close()
     print(f"Hourly imbalance volume plot saved at {plot_path}")
+
 
 def plot_peak_off_peak(data: pd.DataFrame, output_path: str):
     """
@@ -108,6 +110,7 @@ def plot_peak_off_peak(data: pd.DataFrame, output_path: str):
     plt.savefig(plot_file_path, bbox_inches='tight', dpi=300)
     plt.close()
     print(f"Peak and off-peak plot saved to {plot_file_path}")
+
 
 def plot_clustered_usage(data: pd.DataFrame, output_path: str, n_clusters: int = 3):
     """

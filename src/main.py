@@ -5,6 +5,7 @@ from bmrs_client import BMRSClient
 from report_generator import ReportGenerator
 from plotter import plot_imbalance, plot_hourly_imbalance, plot_peak_off_peak, plot_clustered_usage
 
+
 def main():
     """
     Main function to process daily imbalance data for a specific date, generate a report,

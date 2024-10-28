@@ -2,6 +2,7 @@ from datetime import datetime
 import requests
 import pandas as pd
 
+
 class BMRSClient:
     """
     A simple client to interact with the BMRS API, specifically designed to retrieve system prices 

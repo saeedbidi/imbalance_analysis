@@ -1,7 +1,0 @@
-README.md
-setup.py
-imbalance_analysis.egg-info/PKG-INFO
-imbalance_analysis.egg-info/SOURCES.txt
-imbalance_analysis.egg-info/dependency_links.txt
-imbalance_analysis.egg-info/requires.txt
-imbalance_analysis.egg-info/top_level.txt

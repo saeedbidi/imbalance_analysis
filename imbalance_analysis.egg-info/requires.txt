@@ -1,5 +1,0 @@
-numpy
-requests
-matplotlib
-pandas
-pytest
