@@ -3,3 +3,5 @@ requests
 matplotlib
 pandas
 pytest
+statsmodels
+scikit-learn

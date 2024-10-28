@@ -12,5 +12,5 @@ setup(
     author="Saeed Bidi",
     author_email="saeed.bidi@qmul.ac.uk",
     python_requires=">=3.8",
-    install_requires=["numpy", "requests", "matplotlib", "pandas", "pytest"],
+    install_requires=["numpy", "requests", "matplotlib", "pandas", "pytest", "scikit-learn"],
 )
